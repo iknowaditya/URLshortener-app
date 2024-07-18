@@ -28,7 +28,7 @@ connectToMongoDB(process.env.MONGODB_URI).then(() => {
 });
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://urlshotener-client.onrender.com" }));
 
 // Use the URL route
 app.use("/api/url", urlRoute);
