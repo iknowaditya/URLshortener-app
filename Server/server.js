@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 7000;
 
 // CORS configuration
 const corsOptions = {
-  origin: "https://ur-lshortener-app-frontend.vercel.app/", // frontend
+  origin: "https://urlshotener-client.onrender.com", // frontend
   methods: "GET,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
@@ -20,7 +20,7 @@ const corsOptions = {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// // Use CORS middleware
+// Use CORS middleware
 app.use(cors(corsOptions));
 
 connectToMongoDB(process.env.MONGODB_URI).then(() => {
@@ -28,7 +28,6 @@ connectToMongoDB(process.env.MONGODB_URI).then(() => {
 });
 
 app.use(express.json());
-app.use(cors({ origin: "https://urlshotener-client.onrender.com" }));
 
 // Use the URL route
 app.use("/api/url", urlRoute);
