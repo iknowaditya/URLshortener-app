@@ -17,7 +17,7 @@ const UrlsForm = ({ fetchUrls }) => {
       return;
     }
     try {
-      const res = await axios.post(`/api/url/shortUrl`, {
+      const res = await axios.post(`https://urlshort-server.onrender.com/api/url/shortUrl`, {
         fullUrl: fullUrl,
       });
       console.log("Response from server:", res.data);
@@ -38,7 +38,7 @@ const UrlsForm = ({ fetchUrls }) => {
 
   const getShortUrl = async () => {
     try {
-      const res = await axios.get(`/api/url/shortUrl/${shortId}`);
+      const res = await axios.get(`https://urlshort-server.onrender.com/api/url/shortUrl/${shortId}`);
       console.log(res.data);
     } catch (err) {
       console.log("Error getting short URL:", err);
