@@ -13,7 +13,7 @@ const MainUrl = () => {
   // Fetch URLs..
   const fetchUrls = async () => {
     try {
-      const res = await axios.get(`/api/url/shortUrl`);
+      const res = await axios.get(`https://urlshort-server.onrender.com/api/url/shortUrl`);
       setUrls(res.data);
     } catch (err) {
       // console.error("Error fetching URLs:", err);
@@ -23,7 +23,7 @@ const MainUrl = () => {
   // Delete URL..
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/url/shortUrl/${id}`);
+      await axios.delete(`https://urlshort-server.onrender.com/api/url/shortUrl/${id}`);
       setUrls(urls.filter((url) => url._id !== id));
       toast.success("URL deleted successfully!");
     } catch (err) {
