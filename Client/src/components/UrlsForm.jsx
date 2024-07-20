@@ -5,7 +5,7 @@ import { Input } from "@headlessui/react";
 import { toast } from "react-hot-toast";
 import { FaLink, FaArrowRight } from "react-icons/fa";
 
-// const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 const UrlsForm = ({ fetchUrls }) => {
   const [fullUrl, setFullUrl] = useState("");
@@ -17,9 +17,7 @@ const UrlsForm = ({ fetchUrls }) => {
       return;
     }
     try {
-      const res = await axios.post(`/api/url/shortUrl`, {
-        fullUrl: fullUrl,
-      });
+      const res = await axios.post(`${API_URL}/api/url/shortUrl`, { fullUrl });
       console.log("Response from server:", res.data);
       toast.success("Short URL created successfully!");
       setFullUrl("");
@@ -38,7 +36,7 @@ const UrlsForm = ({ fetchUrls }) => {
 
   const getShortUrl = async () => {
     try {
-      const res = await axios.get(`/api/url/shortUrl/${shortId}`);
+      const res = await axios.get(`${API_URL}/api/url/shortUrl/${shortId}`);
       console.log(res.data);
     } catch (err) {
       console.log("Error getting short URL:", err);

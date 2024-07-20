@@ -4,7 +4,7 @@ import UrlsForm from "./UrlsForm";
 import UrlList from "./UrlList";
 import { Toaster, toast } from "react-hot-toast";
 
-// const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 const MainUrl = () => {
   const [urls, setUrls] = useState([]);
@@ -13,7 +13,7 @@ const MainUrl = () => {
   // Fetch URLs..
   const fetchUrls = async () => {
     try {
-      const res = await axios.get(`/api/url/shortUrl`);
+      const res = await axios.get(`${API_URL}/api/url/shortUrl`);
       setUrls(res.data);
     } catch (err) {
       // console.error("Error fetching URLs:", err);
@@ -23,7 +23,7 @@ const MainUrl = () => {
   // Delete URL..
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/url/shortUrl/${id}`);
+      await axios.delete(`${API_URL}/api/url/shortUrl/${id}`);
       setUrls(urls.filter((url) => url._id !== id));
       toast.success("URL deleted successfully!");
     } catch (err) {

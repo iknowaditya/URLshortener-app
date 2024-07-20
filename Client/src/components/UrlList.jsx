@@ -11,7 +11,7 @@ import deleteIcon from "../assets/delete.svg";
 import moreIcon from "../assets/more.svg";
 import { toast } from "react-hot-toast";
 
-// const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 const UrlList = ({ urls = [], handleDelete }) => {
   const [expandedUrl, setExpandedUrl] = useState(null);
@@ -135,7 +135,7 @@ const UrlList = ({ urls = [], handleDelete }) => {
                   </td>
                   <td className="py-2 px-4 truncate max-w-xs underline hover:text-blue-500">
                     <a
-                      href={`/api/url/shortUrl/${url.shortId}`}
+                      href={`${API_URL}/api/url/shortUrl/${url.shortId}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
