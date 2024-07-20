@@ -17,7 +17,9 @@ const UrlsForm = ({ fetchUrls }) => {
       return;
     }
     try {
-      const res = await axios.post(`${API_URL}/api/url/shortUrl`, { fullUrl });
+      const res = await axios.post(`/api/url/shortUrl`, {
+        fullUrl: fullUrl,
+      });
       console.log("Response from server:", res.data);
       toast.success("Short URL created successfully!");
       setFullUrl("");
