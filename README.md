@@ -58,9 +58,8 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 
 ## Screenshots
 
-![App Screenshot](https://github.com/iknowaditya/URLshortener-app/assets/97401096/df7fb33e-a458-4e99-8434-66be44815028)
+![Screenshot 2024-07-18 013057](https://github.com/user-attachments/assets/0312e4f1-f2d9-4a3e-8a24-c24732d99c0e)
 
-![App Screenshot](https://github.com/iknowaditya/URLshortener-app/assets/97401096/983f4e72-48dc-47d5-b15d-12d56aef5d52)
 
 ## Usage/Examples
 
@@ -99,5 +98,3 @@ Install my-project with npm
 
 License
 This project is licensed under the MIT License.
-
-To copy the images into the README file, upload them to a hosting service like GitHub or an image hosting service, then replace the placeholder URLs (https://path/to/screenshot1.png and https://path/to/screenshot2.png) with the actual URLs of the images.
